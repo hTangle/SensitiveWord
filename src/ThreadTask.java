@@ -1,19 +1,19 @@
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.Socket;
+import java.util.concurrent.Callable;
 
-
-
-public class ServiceHandler implements Runnable {
+public class ThreadTask implements Callable<Void>{
     private Socket socket;
     SensitivewordFilter filter;
-    public ServiceHandler(Socket socket,SensitivewordFilter filter){
-        this.socket = socket;
+    public ThreadTask(Socket socket,SensitivewordFilter filter){
+        this.socket=socket;
         this.filter=filter;
     }
-
     @Override
-    public void run() {
-        //DataOutputStream output = null;
+    public Void call() throws Exception {
         DataInputStream input = null;
         try{
             //output = SocketIO.getOutput(socket);
@@ -48,5 +48,6 @@ public class ServiceHandler implements Runnable {
                 }
             }
         }
+        return null;
     }
 }
