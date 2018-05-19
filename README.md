@@ -11,4 +11,4 @@ Email：hsup1994@hotmail.com
 		将socket请求放到线程池中
 		处理完成封装之后再返回
 
-敏感词过滤使用的是FDB算法
+敏感词过滤使用的是DFA算法
