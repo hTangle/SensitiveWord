@@ -51,7 +51,7 @@ public class Server {
 
     public static void main(String[] args) {
         ExecutorService pool= Executors.newFixedThreadPool(50);//使用线程池防止DDRS使服务器停止工作
-        SensitivewordFilter filter = new SensitivewordFilter();
+        final SensitivewordFilter filter = new SensitivewordFilter();
         Server server = new Server();
         server.service(filter,pool);
     }
