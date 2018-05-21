@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class SensitiveWordInit {
 	private String ENCODING = "GBK";    //字符编码
-	@SuppressWarnings("rawtypes")
+
 	public HashMap sensitiveWordMap;
 
 	public SensitiveWordInit(){
@@ -26,7 +26,6 @@ public class SensitiveWordInit {
 			Set<String> keyWordSet = readSensitiveWordFile();
 			//将敏感词库加入到HashMap中
 			addSensitiveWordToHashMap(keyWordSet);
-			//spring获取application，然后application.setAttribute("sensitiveWordMap",sensitiveWordMap);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

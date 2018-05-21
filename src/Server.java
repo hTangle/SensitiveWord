@@ -40,9 +40,6 @@ public class Server {
                 System.out.println(address.getHostAddress());
                 Callable<Void> task=new ThreadTask(socket,filter);
                 pool.submit(task);
-//                ThreadTask threadTask=new ThreadTask(socket,filter);
-                //Thread thread = new Thread(new ServiceHandler(socket,filter));
-                //thread.start();
             }catch(Exception e){
                 e.printStackTrace();
             }
